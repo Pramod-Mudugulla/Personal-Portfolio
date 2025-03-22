@@ -88,7 +88,21 @@ function toggleMenu() {
 4. Customize text and links as needed.
 
 ## Screenshots
-*(Add images here for each section)*
+
+### 🏆 Profile Section
+![Profile Section](assets/profile_section.png)
+
+### 📖 About Section
+![About Section](assets/about_section.png)
+
+### 💼 Experience Section
+![Experience Section](assets/experience_section.png)
+
+### 🚀 Projects Section
+![Projects Section](assets/projects_section.png)
+
+### 📩 Contact Section
+![Contact Section](assets/contact_section.png)
 
 ---
 
