@@ -11,6 +11,7 @@ export interface Project {
     outcome: string;
   };
   image: string;
+  liveUrl?: string;
 }
 
 export interface Experience {

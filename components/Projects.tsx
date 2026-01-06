@@ -39,6 +39,16 @@ const Projects: React.FC = () => {
                   alt={project.title} 
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 opacity-90 group-hover:opacity-100" 
                 />
+                
+                {project.liveUrl && (
+                  <div className="absolute top-6 right-6 z-10">
+                    <span className="flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md rounded-full text-[9px] font-bold uppercase tracking-widest text-zinc-900 dark:text-white shadow-xl">
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                      Live Project
+                    </span>
+                  </div>
+                )}
+
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-sm">
                   <span className="px-8 py-4 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white rounded-full font-bold text-[10px] uppercase tracking-[0.2em] shadow-xl">Explore Case Study</span>
                 </div>
@@ -57,16 +67,31 @@ const Projects: React.FC = () => {
           <div className="max-w-5xl w-full bg-white dark:bg-zinc-950 relative rounded-[3rem] shadow-2xl overflow-hidden animate-in zoom-in-95 duration-500 border border-transparent dark:border-zinc-800">
             <button 
               onClick={() => setSelectedProject(null)}
-              className="absolute top-8 right-8 z-10 p-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-full hover:scale-110 active:scale-95 transition-all shadow-xl"
+              className="absolute top-8 right-8 z-20 p-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-full hover:scale-110 active:scale-95 transition-all shadow-xl"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
 
-            <div className="p-8 md:p-16 lg:p-24 overflow-y-auto max-h-[90vh] hide-scrollbar">
+            <div className="p-8 md:p-16 lg:p-24 overflow-y-auto max-h-[90vh] hide-scrollbar relative">
               <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-[0.3em] mb-4 block">Case Study / {selectedProject.role}</span>
-              <h2 className="text-5xl md:text-7xl font-bold mb-16 tracking-tighter leading-tight dark:text-white">{selectedProject.title}</h2>
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 mb-16">
+                <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-tight dark:text-white max-w-2xl">{selectedProject.title}</h2>
+                {selectedProject.liveUrl && (
+                  <a 
+                    href={selectedProject.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 px-8 py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-full font-bold text-[10px] uppercase tracking-widest hover:scale-105 transition-all shadow-xl active:scale-95 whitespace-nowrap"
+                  >
+                    Visit Live Site
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                )}
+              </div>
               
               <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
                 <div className="md:col-span-8 space-y-16">

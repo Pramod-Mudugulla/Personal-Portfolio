@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
           <div>
             <h2 className="text-6xl font-bold tracking-tighter mb-10">Let's talk.</h2>
             <p className="text-zinc-400 text-xl leading-relaxed mb-12 max-w-sm font-light">
-              I’m currently open to new opportunities starting June 2025. Whether you have a project or just want to say hi, reach out.
+              I’m actively seeking new opportunities in Python, Java, and Generative AI, with hands-on experience in their frameworks. If you’re working on an exciting project, hiring for a role, or simply want to connect, I’d love to hear from you.
             </p>
             
             <div className="space-y-6">

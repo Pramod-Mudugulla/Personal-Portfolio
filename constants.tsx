@@ -105,6 +105,7 @@ export const PROJECTS: Project[] = [
     role: "Full-stack Engineer",
     tech: ["Cloudflare R2", "Cloudflare D1", "React", "Node.js"],
     image: "https://picsum.photos/seed/ghost/1200/800",
+    liveUrl: "https://ghost-share.com/",
     details: {
       problem: "Standard file sharing is often permanent and lacks transparency in privacy.",
       approach: "Built a serverless architecture leveraging Cloudflare workers for automated deletion and secure link generation.",
