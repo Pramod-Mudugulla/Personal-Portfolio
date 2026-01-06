@@ -8,10 +8,10 @@ const About: React.FC = () => {
         <div className="md:w-1/3 md:sticky md:top-32 transition-all">
           <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-zinc-400 dark:text-zinc-500 mb-10">About Me</h2>
           <div className="w-full aspect-square bg-zinc-100 dark:bg-zinc-900 rounded-[2.5rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl shadow-zinc-100 dark:shadow-none">
-            <img src="https://picsum.photos/seed/pramod/800/800" alt="Pramod Mudugulla" className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-1000 opacity-90" />
+            <img src="/Profile.png" alt="Pramod Mudugulla" className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-1000 opacity-90" />
           </div>
         </div>
-        
+
         <div className="md:w-2/3 space-y-20">
           <div className="space-y-10">
             <p className="text-3xl md:text-4xl leading-[1.15] font-light text-zinc-900 dark:text-white tracking-tight">

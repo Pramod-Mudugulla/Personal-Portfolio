@@ -86,7 +86,7 @@ export const PROJECTS: Project[] = [
     description: "Real-time AI customer call handling system with LiveKit and automated escalation.",
     role: "Lead Developer",
     tech: ["LiveKit", "AI Agents", "Python", "Real-time Communication"],
-    image: "https://picsum.photos/seed/ai-sup/1200/800",
+    image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*NX6y5E23ERzmSC-6uen_qA.png",
     details: {
       problem: "Automated call systems often fail to handle complex emotional or logical customer needs without human intervention.",
       approach: "Integrated LiveKit for real-time processing and built a workflow for seamless human handover.",
@@ -99,7 +99,7 @@ export const PROJECTS: Project[] = [
     description: "Document-based QA system using LangChain and Gemini API for secure querying.",
     role: "AI Developer",
     tech: ["Gemini API", "LangChain", "Python", "Streamlit"],
-    image: "https://picsum.photos/seed/rag/1200/800",
+    image: "https://blogs.nvidia.com/wp-content/uploads/2023/11/Retrieval-Augmented-Generation-RAG-KV-1.jpg",
     details: {
       problem: "Users needed a way to query private documents without exposing sensitive data to public LLM training sets.",
       approach: "Developed a localized ingestion and chunking pipeline with vector embeddings and Gemini-based retrieval.",
@@ -112,7 +112,7 @@ export const PROJECTS: Project[] = [
     description: "Secure, auto-expiring file-sharing system with Cloudflare D1 and R2.",
     role: "Full-stack Engineer",
     tech: ["Cloudflare R2", "Cloudflare D1", "React", "Node.js"],
-    image: "https://picsum.photos/seed/ghost/1200/800",
+    image: "https://img.freepik.com/free-photo/secured-file-folder-futuristic-data-network_23-2152001151.jpg?semt=ais_hybrid&w=740&q=80",
     liveUrl: "https://ghost-share.com/",
     details: {
       problem: "Standard file sharing is often permanent and lacks transparency in privacy.",
@@ -126,7 +126,7 @@ export const PROJECTS: Project[] = [
     description: "Simulated real-time trading using OKX WebSocket API and Random Forest models.",
     role: "Backend Engineer",
     tech: ["Python", "WebSocket", "Scikit-learn", "Machine Learning"],
-    image: "https://picsum.photos/seed/trade/1200/800",
+    image: "https://t4.ftcdn.net/jpg/06/82/87/83/360_F_682878367_NY9y4TbcGI86KniuZCSZYrirHAMjUy27.jpg",
     details: {
       problem: "Trading algorithms need high-fidelity simulations that account for market slippage.",
       approach: "Used WebSocket streams for live data and trained a Random Forest model to predict slippage.",
