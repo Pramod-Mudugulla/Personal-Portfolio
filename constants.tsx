@@ -5,22 +5,30 @@ import { Project, CareerInfo, Experience } from './types';
 export const PERSONAL_INFO: CareerInfo = {
   name: "Pramod Mudugulla",
   role: "Software Engineer",
-  expectedSalary: "As per industry standards / Open to discussion",
-  currentCTC: "Confidential (Can be discussed over a call)",
-  noticePeriod: "Immediate / June 2025 (Post Graduation)",
-  availability: "Full-time starting June 2025",
+  expectedSalary: "INR 8,00,000 to 10,00,000",
+  currentCTC: "INR 4,00,000 (Current PAT at Cognizant)",
+  noticePeriod: "Immediate / June 2025",
+  availability: "Full-time starting June 2025 (Open to immediate discussions)",
   openToOffers: true,
-  preferredRoles: ["Backend Engineer", "Software Engineer", "Full-stack Developer"],
-  workType: "Remote / Hybrid / Onsite (Bangalore, Hyderabad)",
-  techStack: ["Java", "Python", "SQL", "Spring Boot", "Django", "React", "Gemini API", "PostgreSQL"],
-  summary: "Software Engineer with strong foundations in Java, Python, and backend development. Experienced in building REST APIs and RAG-based AI systems."
+  preferredRoles: ["Backend Engineer", "Gen AI Engineer", "SDE", "Full Stack Developer", "AI Engineer"],
+  workType: "Hybrid (<50% travel) or Remote",
+  techStack: ["Java", "Python", "SQL", "Spring Boot", "Django", "React", "Gemini API", "PostgreSQL", "LangChain"],
+  summary: "Software Engineer with a focus on Backend and Gen AI. Currently at Cognizant as a PAT. I have one active offer worth INR 8,40,000 but am exploring roles that align better with my expertise in Hyderabad, Bangalore, or Remote."
+};
+
+// Note: Additional context for AI
+export const ADDITIONAL_CAREER_CONTEXT = {
+  activeOffer: "INR 8,40,000",
+  locations: ["Hyderabad", "Bangalore", "Remote"],
+  higherStudies: "No plans for higher studies; fully committed to professional growth.",
+  experience: "1 year of technical expertise/training."
 };
 
 export const EXPERIENCE_DATA: Experience[] = [
   {
     id: "exp-1",
     company: "Cognizant",
-    role: "Programmer Analyst Trainee",
+    role: "Programmer Analyst Trainee (PAT)",
     location: "Bangalore, India",
     period: "Sept 2025 – Present",
     highlights: [
