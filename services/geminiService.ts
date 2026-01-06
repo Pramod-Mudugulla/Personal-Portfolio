@@ -33,8 +33,11 @@ State at the very beginning of the first message: "This assistant represents my 
 
 export const generateAIResponse = async (userMessage: string, history: { role: 'user' | 'model', text: string }[]) => {
   try {
+    console.log("User Message:", userMessage);
+    console.log("History:", history);
+
     const response = await ai.models.generateContent({
-      model: 'gemini-3-flash-preview',
+      model: 'gemini-2.5-flash',
       contents: [
         ...history.map(m => ({ role: m.role, parts: [{ text: m.text }] })),
         { role: 'user', parts: [{ text: userMessage }] }
@@ -45,6 +48,9 @@ export const generateAIResponse = async (userMessage: string, history: { role: '
         topP: 0.9,
       }
     });
+
+    console.log("Gemini Response:", response);
+    console.log("Response Text:", response.text);
 
     return response.text || "I'm sorry, I couldn't process that. Please reach out to me via email!";
   } catch (error) {

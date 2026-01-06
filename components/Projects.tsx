@@ -1,10 +1,22 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PROJECTS } from '../constants';
 import { Project } from '../types';
 
 const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedProject]);
 
   return (
     <section id="work" className="py-40 px-6 bg-zinc-50/50 dark:bg-zinc-900/20 transition-colors duration-500">
@@ -28,18 +40,18 @@ const Projects: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
           {PROJECTS.map((project, idx) => (
-            <div 
-              key={project.id} 
+            <div
+              key={project.id}
               className={`group cursor-pointer ${idx % 2 !== 0 ? 'md:mt-32' : ''}`}
               onClick={() => setSelectedProject(project)}
             >
               <div className="aspect-[4/5] bg-zinc-200 dark:bg-zinc-800 overflow-hidden mb-8 rounded-[2.5rem] relative shadow-2xl shadow-zinc-200 dark:shadow-none">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 opacity-90 group-hover:opacity-100" 
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 opacity-90 group-hover:opacity-100"
                 />
-                
+
                 {project.liveUrl && (
                   <div className="absolute top-6 right-6 z-10">
                     <span className="flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md rounded-full text-[9px] font-bold uppercase tracking-widest text-zinc-900 dark:text-white shadow-xl">
@@ -63,9 +75,9 @@ const Projects: React.FC = () => {
 
       {/* Detail Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center px-4 py-8 bg-zinc-900/60 dark:bg-black/80 backdrop-blur-md animate-in fade-in duration-500 overflow-y-auto">
-          <div className="max-w-5xl w-full bg-white dark:bg-zinc-950 relative rounded-[3rem] shadow-2xl overflow-hidden animate-in zoom-in-95 duration-500 border border-transparent dark:border-zinc-800">
-            <button 
+        <div className="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center p-8 bg-zinc-900/60 dark:bg-black/80 backdrop-blur-md">
+          <div className="modal-content max-w-5xl w-full bg-white dark:bg-zinc-950 relative rounded-[3rem] shadow-2xl overflow-hidden border border-transparent dark:border-zinc-800">
+            <button
               onClick={() => setSelectedProject(null)}
               className="absolute top-8 right-8 z-20 p-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-full hover:scale-110 active:scale-95 transition-all shadow-xl"
             >
@@ -79,7 +91,7 @@ const Projects: React.FC = () => {
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 mb-16">
                 <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-tight dark:text-white max-w-2xl">{selectedProject.title}</h2>
                 {selectedProject.liveUrl && (
-                  <a 
+                  <a
                     href={selectedProject.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -92,7 +104,7 @@ const Projects: React.FC = () => {
                   </a>
                 )}
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
                 <div className="md:col-span-8 space-y-16">
                   <section>
