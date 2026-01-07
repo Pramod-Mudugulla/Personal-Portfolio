@@ -10,8 +10,8 @@
     tailwind.config = {
       darkMode: 'class',
     }
-    // Initialize theme early to prevent flickering
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    // Initialize theme early to prevent flickering - default to light
+    if (localStorage.theme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
